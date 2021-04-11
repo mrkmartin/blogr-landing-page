@@ -1,0 +1,166 @@
+.infrastructure-section {
+  display: flex;
+  flex-direction: column;
+  color: $text;
+  position: relative;
+  margin: 13.75rem 0 4.8125rem;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  background-image: url('../images/bg-pattern-circles.svg'),
+    linear-gradient(to left, $very-dark-desaturated-blue, $very-dark-gray-blue);
+  background-position: 0% -36%;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  // & img {
+  //   position: absolute;
+  //   width: 150%;
+  // }
+
+  // &::before {
+  //   content: '';
+  //   width: 100%;
+  //   height: 622px;
+  //   background-image: url('../images/bg-pattern-circles.svg');
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   position: absolute;
+  //   border-top-right-radius: 100px;
+  //   border-bottom-left-radius: 100px;
+  // }
+
+  @media (min-width: 64em) {
+    width: 100%;
+    height: 25rem;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    margin: 0;
+    background-image: url('../images/bg-pattern-circles.svg'),
+      linear-gradient(
+        to left,
+        $very-dark-desaturated-blue,
+        $very-dark-gray-blue
+      );
+    background-repeat: no-repeat;
+    background-position: -79% 96%;
+    background-size: auto;
+    flex-direction: row;
+  }
+
+  &__img {
+    padding: 0 1.5rem 3.4375rem;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    top: -27%;
+
+    @media (min-width: 48em) {
+      width: 70%;
+      left: 22%;
+    }
+
+    @media (min-width: 64em) {
+      width: 34.5rem;
+      height: 36.1875;
+      padding: 0;
+      top: -17%;
+      left: 8%;
+    }
+
+    & img {
+      display: block;
+      width: inherit;
+
+      @media (min-width: 64em) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    height: 38.875rem;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    padding: 0 1.9375rem;
+    // background: linear-gradient(
+    //   $very-dark-desaturated-blue,
+    //   $very-dark-gray-blue
+    // );
+
+    @media (min-width: 64em) {
+      width: 32.9375rem;
+      height: 25rem;
+      padding: 0;
+      transform: translateX(134%);
+      background: none;
+      text-align: left;
+      margin-top: 7.5rem;
+    }
+    // background-image: url(../images/bg-pattern-circles.svg),
+    //   linear-gradient($very-dark-desaturated-blue, $very-dark-gray-blue);
+    // background-position: center;
+    // background-size: contain;
+    // background-repeat: no-repeat;
+
+    // &::before {
+    //   content: '';
+    //   width: 100%;
+    //   height: 100%;
+    //   border-top-right-radius: 100px;
+    //   border-bottom-left-radius: 100px;
+    //   background: $very-dark-desaturated-blue;
+    //   background-image: url(../images/bg-pattern-circles.svg),
+    //     linear-gradient($very-dark-desaturated-blue, $very-dark-gray-blue);
+    //   background-position: 1px 1px;
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   z-index: -1;
+
+    //   @media (min-width: 64em) {
+    //     width: 50%;
+    //     height: 25rem;
+    //     // background-image: url(../images/bg-pattern-circles.svg),
+    //     //   linear-gradient(
+    //     //     to right $very-dark-desaturated-blue,
+    //     //     $very-dark-gray-blue
+    //     //   );
+    //     background: none;
+    //     border-top-right-radius: 0;
+    //     border-bottom-left-radius: 100px;
+    //     top: 0%;
+    //     left: 0%;
+    //   }
+    // }
+
+    &-heading {
+      max-width: 16ch;
+      margin: 0 auto 1em;
+      padding-top: 14.0625rem;
+
+      @media (min-width: 64em) {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        font-size: 2rem;
+        margin-bottom: 1em;
+      }
+    }
+
+    &-description {
+      max-width: 35ch;
+      margin: 0 auto 3.1875rem;
+
+      @media (min-width: 64em) {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        letter-spacing: 0.0625rem;
+      }
+    }
+  }
+}

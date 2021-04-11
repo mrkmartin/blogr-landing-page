@@ -1,0 +1,53 @@
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: $footer-background;
+  border-top-right-radius: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $footer-text;
+
+  @media (min-width: 64em) {
+    flex-direction: row;
+    align-items: flex-start;
+    height: 22.5625rem;
+    text-align: left;
+  }
+
+  & img {
+    width: 6.4375rem;
+    height: 2.6875rem;
+    display: block;
+    margin: 3.8125rem 0 5.0625rem;
+
+    @media (min-width: 64em) {
+      margin-top: 4.1875rem;
+      margin-left: 10.1875rem;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 1.75em;
+
+    @media (min-width: 64em) {
+      margin-top: 5.0625rem;
+      margin-left: 11.4375rem;
+      margin-bottom: 0;
+    }
+
+    a {
+      display: block;
+      color: $footer-text;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 1.25em;
+  }
+}

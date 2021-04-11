@@ -1,0 +1,430 @@
+.header {
+  height: 37.5rem;
+  background-image: url('/images/bg-pattern-intro.svg'),
+    linear-gradient($very-light-red, $light-red);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom-left-radius: 80px;
+
+  // @media (min-width: 64em) {
+  //   height: 100vh;
+  // }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5em 1.5em 0;
+    margin-bottom: 7.3125em;
+
+    @media (min-width: 64em) {
+      padding: 3.9375rem 9.8125rem 0 10.3125rem;
+    }
+
+    &__logo {
+      @media (min-width: 64em) {
+        margin-right: 4rem;
+      }
+    }
+
+    &__dropdown-menu {
+      position: absolute;
+      top: 8rem;
+      left: 5%;
+      margin: auto;
+      width: 90%;
+      height: auto;
+      border-radius: 5px;
+      padding: 1.4375rem;
+      background-color: $text;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+      pointer-events: none;
+      transform: translateY(-20px);
+      overflow: hidden;
+    }
+
+    &__menu {
+      margin-bottom: 1.25em;
+
+      &--active > .nav__sub-menu {
+        opacity: 1;
+        max-height: 100%;
+        overflow-y: hidden;
+        pointer-events: all;
+      }
+
+      &--active > .nav__title a {
+        color: #576d7b;
+      }
+
+      &--active > .nav__title img {
+        transform: rotateZ(180deg);
+      }
+    }
+
+    &__title {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0.5rem 2.3125rem 0;
+
+      & img {
+        transition: transform 400ms ease-in-out;
+      }
+
+      a {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: $very-dark-gray-blue;
+        margin-right: 0.625em;
+
+        &:hover {
+          color: #576d7b;
+        }
+      }
+    }
+
+    &__sub-menu {
+      margin: auto;
+      width: 100%;
+      background-color: #efeff1;
+      border-radius: 8px;
+      opacity: 0;
+      max-height: 0;
+      pointer-events: none;
+      transition: opacity 400ms ease-in-out, max-height 600ms ease-in-out;
+
+      a {
+        font-size: 1rem;
+        font-weight: 600;
+        display: block;
+        padding-bottom: 1.6875em;
+        color: #576d7b;
+
+        &:first-child {
+          padding-top: 1.6875em;
+        }
+
+        &:hover {
+          color: $very-dark-gray-blue;
+        }
+      }
+    }
+
+    &__cta {
+      button {
+        width: 8.5625rem;
+        display: block;
+        padding: 1rem;
+        border: none;
+        font-size: 1rem;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 700;
+        border-radius: 25px;
+        cursor: pointer;
+        margin: 0.5em auto;
+        transition: 0.3s ease-in-out;
+      }
+
+      &-login {
+        color: $headings;
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+          background: linear-gradient($very-light-red, $light-red);
+          color: $text;
+        }
+      }
+
+      &-signup {
+        background: linear-gradient($very-light-red, $light-red);
+        color: $text;
+
+        &:hover,
+        &:focus {
+          background: none;
+          border: 1px solid $light-red;
+          color: $cta-text;
+        }
+      }
+    }
+
+    .close {
+      display: none;
+    }
+
+    &__hamburger {
+      @media (min-width: 64em) {
+        display: none;
+      }
+    }
+
+    &__hamburger--open {
+      .hamburger {
+        display: none;
+      }
+
+      .close {
+        display: block;
+      }
+    }
+
+    &__dropdown-menu--open {
+      transform: translateY(0px);
+    }
+  }
+
+  &__content {
+    padding: 0 2.625em;
+    width: 100%;
+    color: $text;
+
+    h1 {
+      margin-bottom: 1.5rem;
+
+      @media (min-width: 48em) {
+        font-size: 3.125rem;
+      }
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-bottom: 3.25rem;
+
+      @media (min-width: 48em) {
+        font-size: 1.375rem;
+      }
+    }
+
+    button {
+      display: inline-block;
+      padding: 1em 1.125em;
+      font-size: 1rem;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 0.5em;
+      transition: 0.3s ease-in-out;
+    }
+
+    &-cta {
+      // width: 100%;
+      margin: auto;
+
+      @media (min-width: 23.4375em) {
+        display: ruby;
+      }
+    }
+
+    &-cta1 {
+      background-color: $text;
+      color: $cta-text;
+      border: 0;
+
+      &:hover {
+        background-color: $cta-hover;
+        border: none;
+        color: $text;
+      }
+    }
+
+    &-cta2 {
+      width: 8.5625rem;
+      color: $text;
+      background-color: $cta-text;
+      border: 1px solid $text;
+      margin: auto;
+
+      &:hover {
+        color: $cta-text;
+        background-color: $text;
+      }
+    }
+  }
+}
+
+.desktop {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  display: none;
+
+  @media (min-width: 64em) {
+    display: block;
+  }
+
+  &__menu {
+    display: flex;
+  }
+}
+
+.menu {
+  & img {
+    transition: transform 400ms ease-in-out;
+  }
+
+  &:hover img {
+    transform: rotate(180deg);
+  }
+
+  &:hover > .sub-menu {
+    opacity: 1;
+  }
+}
+
+.sub-menu {
+  & a:hover {
+    color: $very-dark-gray-blue;
+  }
+}
+
+.product {
+  margin-right: 2rem;
+
+  &__menu {
+    cursor: pointer;
+    margin-bottom: 0.5em;
+
+    & a {
+      color: $text;
+      font-weight: 700;
+      margin-right: 0.4375em;
+      font-size: 1.125rem;
+    }
+  }
+
+  &__sub-menu {
+    width: 12.5rem;
+    background-color: $text;
+    border-radius: 5px;
+    padding: 1em 0;
+    position: absolute;
+    opacity: 0;
+
+    & a {
+      display: block;
+      padding: 0.25em;
+      color: #576d7b;
+      font-weight: 600;
+    }
+  }
+}
+
+.company {
+  margin-right: 2rem;
+
+  &__menu {
+    cursor: pointer;
+    margin-bottom: 0.5em;
+
+    & a {
+      color: $text;
+      font-weight: 700;
+      margin-right: 0.4375em;
+      font-size: 1.125rem;
+    }
+  }
+
+  &__sub-menu {
+    width: 12.5rem;
+    background-color: $text;
+    border-radius: 5px;
+    padding: 1em 0;
+    position: absolute;
+    opacity: 0;
+
+    & a {
+      display: block;
+      padding: 0.25em;
+      color: #576d7b;
+      font-weight: 600;
+    }
+  }
+}
+
+.connect {
+  margin-right: 2rem;
+
+  &__menu {
+    cursor: pointer;
+    margin-bottom: 0.5em;
+
+    & a {
+      color: $text;
+      font-weight: 700;
+      margin-right: 0.4375em;
+      font-size: 1.125rem;
+    }
+  }
+
+  &__sub-menu {
+    width: 12.5rem;
+    background-color: $text;
+    border-radius: 5px;
+    padding: 1em 0;
+    position: absolute;
+    opacity: 0;
+
+    & a {
+      display: block;
+      padding: 0.25em;
+      color: #576d7b;
+      font-weight: 600;
+    }
+  }
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: none;
+
+  @media (min-width: 64em) {
+    display: block;
+  }
+}
+
+button {
+  width: 8.5625rem;
+  padding: 0.8125rem;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: background 0.3s ease-in-out;
+}
+
+.cta-login {
+  color: $text;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    background: none;
+    border: 1px solid $text;
+    color: $text;
+  }
+}
+
+.cta-signup {
+  background: $text;
+  color: $cta-text;
+
+  &:hover,
+  &:focus {
+    background: none;
+    border: 1px solid $text;
+    color: $text;
+  }
+}
